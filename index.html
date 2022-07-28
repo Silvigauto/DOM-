@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu digital</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">David's</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                
+                
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+      <!-- inicia carousel -->
+      <div class="foto">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active comida">
+                <img src="img/comida1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item comida" >
+                <img src="img/comida1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item comida">
+                <img src="img/comida1.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div>
+
+      <!-- ends carousel -->
+
+      <!-- Inicia menu princial -->
+
+      <div class="principal">
+        <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
+        <h2 class="tamano">Puedes elegir entre las siguientes opciones:</h2>
+        <div class="menu">
+          <ul>
+            <h3>Comida</h3>
+            <li>Hamburguesa</li>
+            <li>Porción de papas</li>
+            <li>Sanguche de milanesa</li>
+          </ul>
+        
+        
+          <ul>
+            <h3>Bebidas</h3>
+            <li>Gaseosa </li>
+            <li>Agua mineral</li>
+            <li>Cerveza</li>
+          </ul>
+        </div>
+          
+        <div id="totalPersonas" class="text-center"> </div>
+          <div id="tituloPedido" class="text-center"></div>
+          
+      </div>
+
+      <!-- ends menu principal -->
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/index.js"></script>
+</body>
+</html>

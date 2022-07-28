@@ -1,0 +1,19 @@
+.navbar {
+    background-color: rgb(235, 115, 85);
+    
+    .navbar-brand{
+        color: rgb(124, 77, 15);
+        font-size: 30px;
+        padding-left: 100px;
+        
+    }
+
+    ul{
+        padding-right: 100px;
+        li{
+            a{
+                color: rgba(243, 241, 241, 0.932);
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Roboto:wght@100;300&display=swap");
+.navbar {
+  background-color: #eb7355; }
+  .navbar .navbar-brand {
+    color: #7c4d0f;
+    font-size: 30px;
+    padding-left: 100px; }
+  .navbar ul {
+    padding-right: 100px; }
+    .navbar ul li a {
+      color: rgba(243, 241, 241, 0.932); }
+
+.comida {
+  height: 500px; }
+
+.principal h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 50px;
+  margin: 20px; }
+
+.principal h2 {
+  text-align: center;
+  font-family: 'Abel', sans-serif; }
+
+.principal .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .principal .menu ul {
+    margin: 20px;
+    padding: 30px;
+    text-align: center;
+    line-height: 40px;
+    list-style: none; }
