@@ -69,32 +69,49 @@
 
       <div class="principal">
 
-          <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
+        <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
 
-          <div id="contenedor" class="m-4 d-flex flex-column align-items-center">
-              <button id="btnMenu" >Ver menú completo</button>
-          </div>
+        <div id="contenedor" class="m-4 d-flex flex-column align-items-center">
+            <button id="btnMenu" >Ver menú completo</button>
+        </div>
 
-          <form action=""  id="form" class=" m-3 d-flex flex-column align-items-center">
-            <input type="text" id="comida" type="text" placeholder="Ingrese su comida" class="m-2">
-            <input type="text" id="bebida" type="text" placeholder="Ingrese su bebida" class="m-2" >
-            <button type="submit" id="btn-create" class="m-2">Empezar pedido</button>
-          </form>
+        
+        
+        <form action="" id="formPedido" class="m-3 d-flex flex-column align-items-center">
+          <input type="text" id="existe" type="text" placeholder="Ingrese un producto para saber si existe" style="width: 70%;">
+          <button type="submit" id="btn-existe" class="mt-3">Consultar</button>
+        </form>
 
-          
+        <section id="generadorExiste" class="m-4">
 
-          <section id="generadorPedido" class=" m-4 ">
+        </section>
 
-          </section> 
-          
-          <form action="" id="formPedido" class="m-3 d-flex flex-column align-items-center">
-            <input type="text" id="existe" type="text" placeholder="Ingrese un producto para saber si existe" style="width: 70%;">
-            <button type="submit" id="btn-existe" class="mt-3">Consultar</button>
-          </form>
+        
+        <h4 class="text-center">Ingrese cuantas personas van a ser</h1>
 
-          <section id="generadorExiste" class="m-4">
+        <div id='cantidadPersonas' class="m-3 d-flex justify-content-center">
+            <button id="incrementar" class="ms-3 me-3">+</button>
+            <h3  id="contador">0</h3>
+            <button id="decrementar" class="ms-3 me-3">-</button>
+        </div>
 
-          </section>
+        <p id="generadorCantidadPersonas" class="text-center">
+
+        </p>
+
+        <h3 class="text-center">Genere su pedido</h3>
+
+        <form action=""  id="form" class=" m-3 d-flex flex-column align-items-center">
+          <input type="text" id="comida" type="text" placeholder="Ingrese su comida" class="m-2">
+          <input type="text" id="bebida" type="text" placeholder="Ingrese su bebida" class="m-2" >
+          <button type="submit" id="btn-create" class="m-2">Empezar pedido</button>
+        </form>
+
+        
+
+        <section id="generadorPedido" class=" m-4 ">
+
+        </section> 
           
 
 

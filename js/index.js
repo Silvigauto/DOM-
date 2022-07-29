@@ -1,10 +1,23 @@
+//---------Funcion para poder ver el menu al hacer click en 'Ver menu completo'--------------
 
+ let btnMenu = document.getElementById('btnMenu');
 
+ function handleBtnMenu ()  {
+     for (const menu of menuCompleto) {
+        
+        let li = document.createElement('li');
+        li.innerHTML = menu
+        btnMenu.append(li);
+
+}
+ }
+
+btnMenu.addEventListener('click', handleBtnMenu)
+
+// ------------Funcion que muestra si existe o no un producto
 let inputText = document.getElementById('formPedido');
 
 let arrayExiste = []; 
-
-
 
 const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
                   {  id: 2,  producto: "Papas", precio: 500 },
@@ -34,45 +47,50 @@ const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
 
  function generadorExiste () {
     let contenedor = document.getElementById('generadorExiste');   
-    contenedor.innerHTML = `<h4>Ese producto SII lo tenemos</h4>`
+    contenedor.innerHTML = `<h4 class = "text-center">Ese producto SII lo tenemos</h4>`
 
  }
 
  function generadorNoExiste () {
     let contenedor = document.getElementById('generadorExiste');   
-    contenedor.innerHTML = `<h4>Ese producto NOO lo tenemos</h4>`
+    contenedor.innerHTML = `<h4 class = "text-center">Ese producto NOO lo tenemos</h4>`
 
  }
 
 
 
+// ----------Funcion limite de personas para comer-------
+
+let btnIncrementar  = document.getElementById('incrementar');
+let btnDecrementar = document.getElementById('decrementar');
+let contador = document.getElementById('contador');
+let contadorValue = parseInt(contador.innerText);
+
+function incrementarContador () {
+    if(contadorValue <= 5) {
+        contadorValue++;
+        contador.innerText=contadorValue
+     let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
+     generadorCantidadPersonas.innerText = `La cantidad de personas que van a comer son ${contador.innerText}` 
+    } if (contadorValue > 5) {
+        contador.innerText=contadorValue
+        let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
+     generadorCantidadPersonas.innerText = `Solo hay mesas de hasta 6 personas` 
+    }
+}
+
+function decrementarContador () {
+    if(contadorValue > 1) {
+      contadorValue -- ;
+    contador.innerText = contadorValue;  
+    }
+    
+}
+
+btnIncrementar.addEventListener('click', incrementarContador);
+btnDecrementar.addEventListener('click', decrementarContador);
 
 
-
-// // ------------funcion maximo de personas por mesa----------------------
-
-// let cantidadPersonas = prompt('Ingrese cuantas personas son');
-
-// function limitePersonas () {
-//         if(cantidadPersonas > 3) {
-//             alert('Solo tenemos mesas para hasta 3 personas')
-//             cantidadPersonas = prompt('Ingrese cuantas personas son');
-//         } 
-
-        
-//             for (let i = 0; i < cantidadPersonas; i++) {
-//             creacionMenu();
-//             } 
-        
-// }
-
-// limitePersonas();
-
-// // ----------Filter, devuelve todos los productos que podes comprar con ese monto---------------
-
-// let unPrecio = parseInt(prompt('Ingrese cuanto dinero tiene'))
-// const baratos = productos.filter(producto => producto.precio <= unPrecio)
-// console.log(baratos)
 
 
 
@@ -83,32 +101,15 @@ let menuCompleto = menuBebidas.concat(menuComidas);
 
 
 
- let btnMenu = document.getElementById('btnMenu');
 
 
-
-
- function handleBtnMenu ()  {
-     for (const menu of menuCompleto) {
-        
-        let li = document.createElement('li');
-        li.innerHTML = menu
-        btnMenu.append(li);
-
-}
- }
-
-btnMenu.addEventListener('click', handleBtnMenu)
-
-
+// ----------Generador de pedidos que muestra una card-----------
 class Menu {
     constructor(comida, bebida){
         this.comida = comida,
         this.bebida = bebida
     }
-
  }
-
 
  let formulario = document.getElementById('form');
 
@@ -122,7 +123,6 @@ formulario.addEventListener('submit', (event) => {
     console.log(arrayMenu)
      generadorCard();
 })
-
 
 
 const generadorCard = () => {
