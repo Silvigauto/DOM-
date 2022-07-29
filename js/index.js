@@ -3,11 +3,13 @@
  let btnMenu = document.getElementById('btnMenu');
 
  function handleBtnMenu ()  {
+    let contenedorMenu = document.getElementById('contenedorMenu');
+    contenedorMenu.innerHTML = '';
      for (const menu of menuCompleto) {
         
         let li = document.createElement('li');
         li.innerHTML = menu
-        btnMenu.append(li);
+        contenedorMenu.append(li);
 
 }
  }
@@ -32,8 +34,8 @@ const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
  inputText.addEventListener ('submit', (event) => {
     event.preventDefault();  
     let nodo = event.target.children;
-    let info = nodo[0].value;
-    let buscar = productos.findIndex(el => el.producto == info)
+    let info = nodo[0].value.toUpperCase();
+    let buscar = productos.findIndex(el => el.producto.toUpperCase() == info)
 
     if (buscar != -1) {
         console.log('  existeeee')
