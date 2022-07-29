@@ -16,19 +16,20 @@
 .principal h1 {
   font-family: 'Bebas Neue', cursive;
   font-size: 50px;
-  margin: 20px; }
+  margin: 20px;
+  color: #8a2020; }
 
-.principal h2 {
-  text-align: center;
-  font-family: 'Abel', sans-serif; }
+.principal #btnMenu {
+  font-size: 1.3em;
+  color: #571313;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #ad6f6f;
+  padding: 10px; }
 
-.principal .menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
-  .principal .menu ul {
-    margin: 20px;
-    padding: 30px;
-    text-align: center;
-    line-height: 40px;
-    list-style: none; }
+.principal #btn-create {
+  color: #571313;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #ad6f6f;
+  padding: 10px; }

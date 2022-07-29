@@ -68,30 +68,23 @@
       <!-- Inicia menu princial -->
 
       <div class="principal">
-        <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
-        <h2 class="tamano">Puedes elegir entre las siguientes opciones:</h2>
-        <div class="menu">
-          <ul>
-            <h3>Comida</h3>
-            <li>Hamburguesa</li>
-            <li>Porción de papas</li>
-            <li>Sanguche de milanesa</li>
-          </ul>
-        
-        
-          <ul>
-            <h3>Bebidas</h3>
-            <li>Gaseosa </li>
-            <li>Agua mineral</li>
-            <li>Cerveza</li>
-          </ul>
-        </div>
-          
-        
 
-      
+          <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
 
-        
+          <div id="contenedor" class="m-4 d-flex flex-column align-items-center">
+              <button id="btnMenu" >Ver menú completo</button>
+          </div>
+
+          <form action=""  id="form" class=" m-3 d-flex flex-column align-items-center">
+            <input type="text" id="comida" type="text" placeholder="Ingrese su comida" class="m-2">
+            <input type="text" id="bebida" type="text" placeholder="Ingrese su bebida" class="m-2" >
+            <button type="submit" id="btn-create" class="m-2">Empezar pedido</button>
+          </form>
+
+          <section id="generadorPedido" class=" m-4 ">
+
+          </section> 
+     
       </div> 
 
       <!-- ends menu principal -->
