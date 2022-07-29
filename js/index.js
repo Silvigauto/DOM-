@@ -1,60 +1,50 @@
 
 
+let inputText = document.getElementById('formPedido');
 
-// // ------------------Existencia de producto 'some'----------
+let arrayExiste = []; 
 
-// const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
-//                   {  id: 2,  producto: "Papas", precio: 500 },
-//                   {  id: 3,  producto: "Sanguche de milanesa"  , precio: 700},
-//                   {  id: 3,  producto: "Cerveza"  , precio: 600},
-//                   {  id: 3,  producto: "Gaseosa linea pepsi"  , precio: 250},
-//                   {  id: 3,  producto: "Agua"  , precio: 350},
+
+
+const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
+                  {  id: 2,  producto: "Papas", precio: 500 },
+                  {  id: 3,  producto: "Sanguche de milanesa"  , precio: 700},
+                  {  id: 4,  producto: "Cerveza"  , precio: 600},
+                  {  id: 5,  producto: "Gaseosa"  , precio: 250},
+                  {  id: 6,  producto: "Agua"  , precio: 350},
                   
-//                 ]
+ ]
 
 
+ inputText.addEventListener ('submit', (event) => {
+    event.preventDefault();  
+    let nodo = event.target.children;
+    let info = nodo[0].value;
+    let buscar = productos.findIndex(el => el.producto == info)
 
-// let siExiste = prompt('Ingrese el producto que desea saber si hay. INGRESE LA PRIMERA LETRA CON MAYUSCULA')
+    if (buscar != -1) {
+        console.log('  existeeee')
+        generadorExiste ()
+    } else {
+        console.log('No existeeee')
+        generadorNoExiste ()
+    }
 
-// const existe = productos.some(producto => producto.producto === siExiste);
+ })
 
-// function existeProducto() {
-//     if (existe == false ) {
-//        alert ('Ese producto no lo tenemos :(')
-//     }
-//     else if (existe == true) {
-//        alert ('Ese producto si lo tenemos!')
-//     }
-//    }
-   
-   
-// existeProducto();
-      
+ function generadorExiste () {
+    let contenedor = document.getElementById('generadorExiste');   
+    contenedor.innerHTML = `<h4>Ese producto SII lo tenemos</h4>`
 
-// // ------------ Función para tomar pedidos con clases y objetos-----------------------------
+ }
+
+ function generadorNoExiste () {
+    let contenedor = document.getElementById('generadorExiste');   
+    contenedor.innerHTML = `<h4>Ese producto NOO lo tenemos</h4>`
+
+ }
 
 
-// let pedido = []; 
-
-// class Menu1 {
-//     constructor(comida, bebida) {
-//         this.comida = comida;
-//         this.bebida = bebida;
-//     }
-//     mostrar() {       
-//         alert('Tu pedido es: \n Comida: ' + this.comida + '\n Bebida: ' + this.bebida);
-//     }
-// }
-
-// function creacionMenu () {
-//     let producto1 = prompt('Ingrese su comida');
-//     let producto2 = prompt('Ingrese su bebida');
-//     let cliente1 = new Menu1 (producto1, producto2)
-//     cliente1.mostrar();
-//     pedido.push(cliente1);
-//     console.log(pedido);
-
-// }
 
 
 
@@ -86,8 +76,8 @@
 
 
 
-let menuBebidas = ['Gaseosa ', 'Agua Mineral', 'Cerveza'];
-let menuComidas = ['Hamburguesa ', 'Porción de papas fritas', 'Sanguche de Milanesa'];
+let menuBebidas = ['Gaseosa ', 'Agua', 'Cerveza'];
+let menuComidas = ['Hamburguesa ', 'Papas', 'Sanguche de milanesa'];
 let menuCompleto = menuBebidas.concat(menuComidas);
 
 
@@ -100,6 +90,7 @@ let menuCompleto = menuBebidas.concat(menuComidas);
 
  function handleBtnMenu ()  {
      for (const menu of menuCompleto) {
+        
         let li = document.createElement('li');
         li.innerHTML = menu
         btnMenu.append(li);
@@ -138,7 +129,7 @@ const generadorCard = () => {
     let contenedor = document.getElementById('generadorPedido');
     generadorPedido.innerHTML = '';
     arrayMenu.map( el => contenedor.innerHTML += `
-                        <div class="card" id="${el.comida}" ">
+                        <div class="card mt-3" id="${el.comida}" ">
                             
                             <div class="card-body">
                             <h5 class="card-title">Tu pedido es:</h5>
