@@ -82,7 +82,9 @@ function incrementarContador () {
 function decrementarContador () {
     if(contadorValue > 1) {
       contadorValue -- ;
-    contador.innerText = contadorValue;  
+    contador.innerText = contadorValue; 
+    let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
+     generadorCantidadPersonas.innerText = `La cantidad de personas que van a comer son ${contador.innerText}` 
     }
     
 }
@@ -120,8 +122,9 @@ formulario.addEventListener('submit', (event) => {
     let info = event.target.children;
     const menu1 = new Menu(info[0].value, info[1].value);
     arrayMenu.push(menu1)
-    console.log(arrayMenu)
-     generadorCard();
+    generadorCard();
+    
+     
 })
 
 
