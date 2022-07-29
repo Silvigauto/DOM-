@@ -98,25 +98,3 @@ let unPrecio = parseInt(prompt('Ingrese cuanto dinero tiene'))
 const baratos = productos.filter(producto => producto.precio <= unPrecio)
 console.log(baratos)
 
-// ----------------DOM-----------
-
-
-// --------Muestra cuantas personas comen 
-
-let totalPersonas = document.createElement('p');
-
-totalPersonas.innerText = `La cantidad de personas que van a comer son: ${cantidadPersonas}`;
-
-let container = document.getElementById('totalPersonas')
-container.append(totalPersonas);
-
-
-
-// -------Muestra el pedido completo
-
-let tituloPedido = document.createElement('p');
-
-tituloPedido.innerText = `El pedido final es: ${pedido}`;
-
-let container1 = document.getElementById('tituloPedido');
-container.append(tituloPedido);
