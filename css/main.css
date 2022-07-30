@@ -13,23 +13,34 @@
 .comida {
   height: 500px; }
 
-.principal h1 {
+.principal .verMenu h1 {
   font-family: 'Bebas Neue', cursive;
   font-size: 50px;
   margin: 20px;
   color: #8a2020; }
 
-.principal #btnMenu {
+.principal .verMenu #btnMenu {
   font-size: 1.3em;
+  color: white;
+  border-radius: 5px;
+  border-style: none;
+  background-color: #da671b;
+  padding: 10px; }
+
+.principal .verMenu #btn-create {
   color: #571313;
   border-radius: 5px;
   border-style: none;
   background-color: #ad6f6f;
   padding: 10px; }
 
-.principal #btn-create {
-  color: #571313;
-  border-radius: 5px;
-  border-style: none;
-  background-color: #ad6f6f;
-  padding: 10px; }
+.personas {
+  margin: 50px; }
+  .personas .btndc {
+    background-color: #da671b;
+    color: white;
+    border-style: none;
+    width: 40px;
+    border-radius: 2px; }
+    .personas .btndc:hover {
+      color: black; }

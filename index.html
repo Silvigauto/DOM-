@@ -21,7 +21,8 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-         
+
+          
         </div>
       </nav>
 
@@ -56,12 +57,16 @@
 
       <div class="principal">
 
-        <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
+        <section class="verMenu">
+          <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
 
         <div id="contenedor" class="m-4 d-flex flex-column align-items-center">
             <button id="btnMenu" >Ver menú completo</button>
             <ul id="contenedorMenu"></ul>
         </div>
+        </section>
+
+        
 
         
         
@@ -74,18 +79,20 @@
 
         </section>
 
-        
-        <h4 class="text-center">Ingrese cuantas personas van a ser</h1>
+        <div class="personas">
+          <h4 class="text-center">Ingrese cuantas personas van a ser</h1>
 
         <div id='cantidadPersonas' class="m-3 d-flex justify-content-center">
-            <button id="incrementar" class="ms-3 me-3">+</button>
+            <button id="incrementar" class=" btndc ms-3 me-3">+</button>
             <h3  id="contador">0</h3>
-            <button id="decrementar" class="ms-3 me-3">-</button>
+            <button id="decrementar" class=" btndc ms-3 me-3">-</button>
         </div>
 
         <p id="generadorCantidadPersonas" class="text-center">
 
         </p>
+        </div>
+        
 
         <h3 class="text-center">Genere su pedido</h3>
 
