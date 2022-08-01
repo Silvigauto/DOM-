@@ -1,31 +1,73 @@
 .principal {
     .verMenu {
-        
         h1{
-        font-family:  'Bebas Neue', cursive;
-        font-size: 50px;
-        margin: 20px;
-        color: rgb(138, 32, 32);
+            font-family:  'Bebas Neue', cursive;
+            font-size: 50px;
+            margin: 20px;
+            color: rgb(138, 32, 32);
+            
+        }
+
+        #btnMenu {
+            font-size: 1.3em;
+            color: white;
+            border-radius: 5px;
+            border-style: none;
+            background-color: rgb(218, 103, 27);
+            padding: 10px;
+            &:hover {
+                color: rgb(117, 62, 26);
+            }
+        }
+
+        #btn-create {
+            color:rgb(87, 19, 19);
+            border-radius: 5px;
+            border-style: none;
+            background-color:rgb(173, 111, 111) ;
+            padding: 10px;
+            
+        }
+    }
+    
+
+    #btn-existe {
+        background-color: rgb(218, 103, 27);
+        color: white;
+        border-radius: 2px;
+        border-style: none;
+        padding: 5px;
+        width: 15%;
+        &:hover {
+            color: rgb(117, 62, 26);
+        }
     }
 
-    #btnMenu {
-        font-size: 1.3em;
-        color: white;
-        border-radius: 5px;
-        border-style: none;
+    .personas {   
+        margin: 50px;
+        .btndc {
         background-color: rgb(218, 103, 27);
-        padding: 10px;
+        color: white;
+        border-style: none;
+        width: 40px;
+        border-radius: 2px;   
+            &:hover {
+                color: black;
+            }
+        }
     }
 
     #btn-create {
-        color:rgb(87, 19, 19);
-        border-radius: 5px;
+        background-color: rgb(218, 103, 27);
+        color: white;
+        border-radius: 2px;
         border-style: none;
-        background-color:rgb(173, 111, 111) ;
-        padding: 10px;
-        
+        padding: 5px;
+        &:hover {
+            color: rgb(117, 62, 26);
+        }
     }
-    }
+    
     
 
     

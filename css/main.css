@@ -10,9 +10,6 @@
     .navbar ul li a {
       color: rgba(243, 241, 241, 0.932); }
 
-.comida {
-  height: 500px; }
-
 .principal .verMenu h1 {
   font-family: 'Bebas Neue', cursive;
   font-size: 50px;
@@ -26,6 +23,8 @@
   border-style: none;
   background-color: #da671b;
   padding: 10px; }
+  .principal .verMenu #btnMenu:hover {
+    color: #753e1a; }
 
 .principal .verMenu #btn-create {
   color: #571313;
@@ -34,13 +33,32 @@
   background-color: #ad6f6f;
   padding: 10px; }
 
-.personas {
+.principal #btn-existe {
+  background-color: #da671b;
+  color: white;
+  border-radius: 2px;
+  border-style: none;
+  padding: 5px;
+  width: 15%; }
+  .principal #btn-existe:hover {
+    color: #753e1a; }
+
+.principal .personas {
   margin: 50px; }
-  .personas .btndc {
+  .principal .personas .btndc {
     background-color: #da671b;
     color: white;
     border-style: none;
     width: 40px;
     border-radius: 2px; }
-    .personas .btndc:hover {
+    .principal .personas .btndc:hover {
       color: black; }
+
+.principal #btn-create {
+  background-color: #da671b;
+  color: white;
+  border-radius: 2px;
+  border-style: none;
+  padding: 5px; }
+  .principal #btn-create:hover {
+    color: #753e1a; }
