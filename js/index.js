@@ -38,10 +38,10 @@ const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
     let buscar = productos.findIndex(el => el.producto.toUpperCase() == info)
 
     if (buscar != -1) {
-        console.log('  existeeee')
+        
         generadorExiste ()
     } else {
-        console.log('No existeeee')
+        
         generadorNoExiste ()
     }
 
@@ -49,13 +49,13 @@ const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
 
  function generadorExiste () {
     let contenedor = document.getElementById('generadorExiste');   
-    contenedor.innerHTML = `<h4 class = "text-center">Ese producto SII lo tenemos</h4>`
+    contenedor.innerHTML = `<h4 class = "text-center">Ese producto SI lo tenemos</h4>`
 
  }
 
  function generadorNoExiste () {
     let contenedor = document.getElementById('generadorExiste');   
-    contenedor.innerHTML = `<h4 class = "text-center">Ese producto NOO lo tenemos</h4>`
+    contenedor.innerHTML = `<h4 class = "text-center">No contamos con ese producto</h4>`
 
  }
 

@@ -10,6 +10,9 @@
     .navbar ul li a {
       color: rgba(243, 241, 241, 0.932); }
 
+.fotoHamburguesa {
+  height: 600px; }
+
 .principal .verMenu h1 {
   font-family: 'Bebas Neue', cursive;
   font-size: 50px;
