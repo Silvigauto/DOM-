@@ -119,21 +119,39 @@ class Menu {
 
  let arrayMenu = [];
 
+
+
+
+ window.addEventListener("load", () => {
+    if (localStorage.getItem('arrayMenu')) {
+        arrayMenu = JSON.parse(localStorage.getItem("arrayMenu"));
+        generadorCard(arrayMenu)
+    }
+   
+  })
+
+
+
+
+
+
 formulario.addEventListener('submit', (event) => {
     event.preventDefault();
     let info = event.target.children;
     const menu1 = new Menu(info[0].value, info[1].value);
     arrayMenu.push(menu1)
-    generadorCard();
+    generadorCard(arrayMenu);
+
+    localStorage.setItem("arrayMenu", JSON.stringify(arrayMenu))
     
      
 })
 
 
-const generadorCard = () => {
+const generadorCard = (array) => {
     let contenedor = document.getElementById('generadorPedido');
     generadorPedido.innerHTML = '';
-    arrayMenu.map( el => contenedor.innerHTML += `
+    array.map( el => contenedor.innerHTML += `
                         <div class="card mt-3" id="${el.comida}" ">
                             
                             <div class="card-body">
@@ -147,5 +165,6 @@ const generadorCard = () => {
 
 
  }
+
 
 
