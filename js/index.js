@@ -1,4 +1,7 @@
 //---------Funcion para poder ver el menu al hacer click en 'Ver menu completo'--------------
+let menuBebidas = ['Gaseosa ', 'Agua', 'Cerveza'];
+let menuComidas = ['Hamburguesa ', 'Papas', 'Sanguche de milanesa'];
+let menuCompleto = menuBebidas.concat(menuComidas);
 
  let btnMenu = document.getElementById('btnMenu');
 
@@ -64,50 +67,55 @@ const productos = [{ id: 1,  producto: "Hamburguesa", precio: 800 },
 // ----------Funcion limite de personas para comer-------
 
 let btnIncrementar  = document.getElementById('incrementar');
+
 let btnDecrementar = document.getElementById('decrementar');
+
+
 let contador = document.getElementById('contador');
+
 let contadorValue = parseInt(contador.innerText);
 
-function incrementarContador () {
-    if(contadorValue <= 5) {
+
+
+
+function handleContador (e) {
+    let btn = e.target;
+    let operacion = btn.innerText;
+    if (operacion == '+' && contadorValue <= 5) {
         contadorValue++;
         contador.innerText=contadorValue
-     let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
-     generadorCantidadPersonas.innerText = `La cantidad de personas que van a comer son ${contador.innerText}` 
-    } if (contadorValue > 5) {
+        let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
+        generadorCantidadPersonas.innerText = `La cantidad de personas que van a comer son ${contador.innerText}`
+ 
+ 
+    } if (operacion == '-' && contadorValue > 1 ) {
+        contadorValue -- ;
+         contador.innerText = contadorValue; 
+         let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
+      generadorCantidadPersonas.innerText = `La cantidad de personas que van a comer son ${contador.innerText}`
+ 
+    } else if (contadorValue > 5) {
         contador.innerText=contadorValue
         let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
-     generadorCantidadPersonas.innerText = `Solo hay mesas de hasta 6 personas` 
+      generadorCantidadPersonas.innerText = `Solo hay mesas de hasta 6 personas` 
     }
-}
 
-function decrementarContador () {
-    if(contadorValue > 1) {
-      contadorValue -- ;
-    contador.innerText = contadorValue; 
-    let generadorCantidadPersonas = document.getElementById('generadorCantidadPersonas');
-     generadorCantidadPersonas.innerText = `La cantidad de personas que van a comer son ${contador.innerText}` 
-    }
+    
     
 }
 
-btnIncrementar.addEventListener('click', incrementarContador);
-btnDecrementar.addEventListener('click', decrementarContador);
-
-
-
-
-
-let menuBebidas = ['Gaseosa ', 'Agua', 'Cerveza'];
-let menuComidas = ['Hamburguesa ', 'Papas', 'Sanguche de milanesa'];
-let menuCompleto = menuBebidas.concat(menuComidas);
-
+btnIncrementar.addEventListener('click', handleContador);
+btnDecrementar.addEventListener('click', handleContador);
 
 
 
 
 
 // ----------Generador de pedidos que muestra una card-----------
+
+
+
+
 class Menu {
     constructor(comida, bebida){
         this.comida = comida,
@@ -126,6 +134,7 @@ class Menu {
     if (localStorage.getItem('arrayMenu')) {
         arrayMenu = JSON.parse(localStorage.getItem("arrayMenu"));
         generadorCard(arrayMenu)
+        
     }
    
   })
@@ -158,13 +167,32 @@ const generadorCard = (array) => {
                             <h5 class="card-title">Tu pedido es:</h5>
                             <p class="card-text">${el.comida}</p>
                             <p class="card-text">${el.bebida}</p>
+                            <button type="button" class = "btn btn-danger btnEliminar" > Borrar </button>
                             
                             </div>
                         </div>
     `)
 
-
+    eliminar();
  }
 
 
 
+const eliminar = () => {
+let btnEliminar = document.querySelectorAll('.btnEliminar')
+
+for (const btn of btnEliminar) {
+    btn.addEventListener('click', (event) => {
+        let nodo = event.path[2];
+          
+        let buscar = arrayMenu.findIndex(el => el.comida == nodo.id)
+        
+        arrayMenu.splice(buscar, 1)
+         
+        nodo.remove()
+        localStorage.setItem("arrayMenu", JSON.stringify(arrayMenu))  
+
+    })
+    
+}
+}

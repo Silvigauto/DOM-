@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,110 +10,120 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
 
-</head>
-<body>
+  </head>
+
+  <body>
+    <!-- inicia navbar -->
 
     <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid d-flex flex-column align-items-center">
-          <a class="navbar-brand" href="index.html">
-            <img src="img/David's.png" alt="Logo del restaurante" >
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          
-        </div>
-      </nav>
-
-      <!-- inicia carousel -->
-      <div class="foto">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active comida">
-                <img src="img/hamburguesa.webp" class="d-block w-100 fotoHamburguesa" alt="...">
-              </div>
-              <div class="carousel-item comida" >
-                <img src="img/hamburguesa.webp" class="d-block w-100 fotoHamburguesa" alt="...">
-              </div>
-              <div class="carousel-item comida">
-                <img src="img/hamburguesa.webp" class="d-block w-100 fotoHamburguesa" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+      <div class="container-fluid d-flex flex-column align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/David's.png" alt="Logo del restaurante" >
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>        
       </div>
+    </nav>
 
-      <!-- ends carousel -->
+    <!-- inicia carousel -->
 
-      <!-- Inicia menu princial -->
-
-      <div class="principal">
-
-        <section class="verMenu">
-          <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
-
-        <div id="contenedor" class="m-4 d-flex flex-column align-items-center">
-            <button id="btnMenu" >Ver menú completo</button>
-            <ul id="contenedorMenu"></ul>
+    <div class="foto">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active comida">
+            <img src="img/hamburguesa.webp" class="d-block w-100 fotoHamburguesa" alt="...">
+          </div>
+          <div class="carousel-item comida" >
+            <img src="img/hamburguesa.webp" class="d-block w-100 fotoHamburguesa" alt="...">
+          </div>
+          <div class="carousel-item comida">
+            <img src="img/hamburguesa.webp" class="d-block w-100 fotoHamburguesa" alt="...">
+          </div>
         </div>
-        </section>
 
-        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
 
-        
-        
-        <form action="" id="formPedido" class="m-3 d-flex flex-column align-items-center">
-          <input type="text" id="existe" type="text" placeholder="Ingrese un producto para saber si existe" style="width: 70%;">
-          <button type="submit" id="btn-existe" class="mt-3 btn-consultar ">Consultar</button>
-        </form>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
 
-        <section id="generadorExiste" class="m-4">
+      </div>
+    </div>
 
-        </section>
+    <!-- ends carousel -->
 
-        <div class="personas">
-          <h4 class="text-center">Ingrese cuantas personas van a ser</h1>
+    <!-- Inicia contenedor princial -->
+
+    <div class="principal">
+
+      <!-- Ver menu completo -->
+      <section class="verMenu">
+        <h1 class="text-center pt-3">Menú digital restaurante David's</h1>
+        <div id="contenedor" class="m-4 d-flex flex-column align-items-center">
+          <button id="btnMenu" >Ver menú completo</button>
+          <ul id="contenedorMenu"></ul>
+        </div>
+      </section>
+
+      <!-- Ingrese un producto para saber si existe -->
+
+                 
+      <form action="" id="formPedido" class="m-3 d-flex flex-column align-items-center">
+        <input type="text" id="existe" type="text" placeholder="Ingrese un producto para saber si existe" style="width: 70%;">
+        <button type="submit" id="btn-existe" class="mt-3 btn-consultar ">Consultar</button>
+      </form>
+
+      <section id="generadorExiste" class="m-4">
+
+      </section>
+
+
+      <!-- Ingrese cuantas personas van a ser -->
+
+      <div class="personas">
+        <h4 class="text-center">Ingrese cuantas personas van a ser</h1>
 
         <div id='cantidadPersonas' class="m-3 d-flex justify-content-center">
-            <button id="incrementar" class=" btndc ms-3 me-3">+</button>
-            <h3  id="contador">0</h3>
-            <button id="decrementar" class=" btndc ms-3 me-3">-</button>
+          <button id="incrementar" class=" btndc ms-3 me-3">+</button>
+          <h3  id="contador">0</h3>
+          <button id="decrementar" class=" btndc ms-3 me-3">-</button>
         </div>
 
         <p id="generadorCantidadPersonas" class="text-center">
 
         </p>
-        </div>
-        
+      </div>
 
-        <h3 class="text-center">Genere su pedido</h3>
-
-        <form action=""  id="form" class=" m-3 d-flex flex-column align-items-center">
-          <input type="text" id="comida" type="text" placeholder="Ingrese su comida" class="m-2">
-          <input type="text" id="bebida" type="text" placeholder="Ingrese su bebida" class="m-2" >
-          <button type="submit" id="btn-create" class="m-2 ps-3 pe-3">Empezar pedido</button>
-        </form>
-
-        
-
-        <section id="generadorPedido" class=" m-4 ">
-
-        </section> 
+      <!-- Generador de pedidos -->
           
 
+      <h3 class="text-center">Genere su pedido</h3>
 
-      </div> 
+      <form action=""  id="form" class=" m-3 d-flex flex-column align-items-center">
+        <input type="text" id="comida" type="text" placeholder="Ingrese su comida" class="m-2">
+        <input type="text" id="bebida" type="text" placeholder="Ingrese su bebida" class="m-2" >
+        <button type="submit" id="btn-create" class="m-2 ps-3 pe-3">Empezar pedido</button>
+      </form>
 
-      <!-- ends menu principal -->
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/index.js"></script>
-</body>
+    
+      <section id="generadorPedido" class=" m-4 ">
+
+      </section> 
+
+      
+
+
+    </div> 
+    <!-- ends contenedor principal -->
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
