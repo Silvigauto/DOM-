@@ -181,18 +181,29 @@ const generadorCard = (array) => {
 const eliminar = () => {
 let btnEliminar = document.querySelectorAll('.btnEliminar')
 
-for (const btn of btnEliminar) {
-    btn.addEventListener('click', (event) => {
-        let nodo = event.path[2];
-          
-        let buscar = arrayMenu.findIndex(el => el.comida == nodo.id)
-        
-        arrayMenu.splice(buscar, 1)
-         
-        nodo.remove()
-        localStorage.setItem("arrayMenu", JSON.stringify(arrayMenu))  
+    for (const btn of btnEliminar) {
+        btn.addEventListener('click', (event) => {
+            let nodo = event.path[2];
+            
+            let buscar = arrayMenu.findIndex(el => el.comida == nodo.id)
+            
+            arrayMenu.splice(buscar, 1)
+            
+            nodo.remove()
+            localStorage.setItem("arrayMenu", JSON.stringify(arrayMenu))  
 
-    })
-    
+
+            Swal.fire({
+                title: `Has eliminado ${nodo.id}`,
+                
+                icon: 'error',
+                confirmButtonText: 'OK'
+            })
+
+        })
+        
+    }
 }
-}
+
+
+
