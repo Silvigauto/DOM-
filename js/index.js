@@ -104,95 +104,113 @@ btnDecrementar.addEventListener('click', handleContador);
 
 
 
-// --------------------- Carrito de compras con Local Storage ---------------
-let carritoDeCompras = JSON.parse(localStorage.getItem('carrito'))||[];
+// --------------------- Pedidos ---------------
 
 
-class Productos  {
-    constructor (img, title) {
-        this.img = img,
-        this. title = title
-        
+// ----------Generador de pedidos que muestra una card-----------
 
+
+
+
+class Menu {
+    constructor(comida, bebida){
+        this.comida = comida,
+        this.bebida = bebida
     }
-}
+ }
+
+ let formulario = document.getElementById('form');
+
+ let arrayMenu = [];
 
 
 
 
-let btnAgregar = document.getElementsByClassName('shop-item-button');
+ window.addEventListener("load", () => {
+    if (localStorage.getItem('arrayMenu')) {
+        arrayMenu = JSON.parse(localStorage.getItem("arrayMenu"));
+        generadorCard(arrayMenu)
+        
+    }
+   
+  })
 
 
 
-for (const btn of btnAgregar) {
-    btn.addEventListener ('click', agregarCarrito)
-}
 
 
-function agregarCarrito (event) {
+
+formulario.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let info = event.target.children;
+    const menu1 = new Menu(info[0].value, info[1].value);
+    arrayMenu.push(menu1)
+    generadorCard(arrayMenu);
+
+    localStorage.setItem("arrayMenu", JSON.stringify(arrayMenu));
+
+    Toastify({
+        text: "Has agregado algo al pedido!",
+        duration: 3000,
+        gravity: 'top',
+        position: 'right',
+        style: {
+         background: 'rgb(218, 103, 27, 0.7)'
+     }
+
+    }).showToast();
     
-
-    let btnCart = event.target    
-    let shopItem = btnCart.parentElement.parentElement
-      
-    let img = shopItem.getElementsByClassName('shop-item-image')[0].src
-    let title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    
- 
-    let carrito1 = new Productos (img, title)
-    carritoDeCompras.push(carrito1)
-      
-    generadorCarrito(carritoDeCompras);
-    localStorage.setItem('carrito', JSON.stringify(carritoDeCompras))
-    
-}
+     
+})
 
 
-function generadorCarrito (array) {
-    let contenedor = document.getElementById('cart-items')
-    contenedor.innerHTML = ''; 
-    array.map ( el => contenedor.innerHTML +=   `<div class="cart-row">
-                                                    <div class="cart-item cart-column">
-                                                        <img class="cart-item-image" src="${el.img}" width="100" height="100">
-                                                        <span class="cart-item-title">${el.title}</span>
-                                                    </div>
-                                                    
-                                                    <div class="cart-quantity cart-column">
-                                                        
-                                                        <button class="btn btn-danger" type="button">Eliminar</button>
-                                                    </div>
-                                                </div>
+const generadorCard = (array) => {
+    let contenedor = document.getElementById('generadorPedido');
+    generadorPedido.innerHTML = '';
+    array.map( el => contenedor.innerHTML += `
+                        <div class="card mt-3" id="${el.comida}" ">
+                            
+                            <div class="card-body">
+                            <h5 class="card-title">Tu pedido es:</h5>
+                            <p class="card-text">${el.comida}</p>
+                            <p class="card-text">${el.bebida}</p>
+                            <button type="button" class = "btn btn-danger btnEliminar" > Borrar </button>
+                            
+                            </div>
+                        </div>
     `)
-   eliminar ();
 
-}
+    eliminar();
+ }
+
 
 
 const eliminar = () => {
-let btnEliminar = document.querySelectorAll('.btn-danger')
+let btnEliminar = document.querySelectorAll('.btnEliminar')
 
     for (const btn of btnEliminar) {
         btn.addEventListener('click', (event) => {
             let nodo = event.path[2];
             
-            let buscar = carritoDeCompras.findIndex(el => el.title == nodo.id)
+            let buscar = arrayMenu.findIndex(el => el.comida == nodo.id)
             
-            carritoDeCompras.splice(buscar, 1)
+            arrayMenu.splice(buscar, 1)
             
             nodo.remove()
-              
-            localStorage.setItem('carrito', JSON.stringify(carritoDeCompras))
+            localStorage.setItem("arrayMenu", JSON.stringify(arrayMenu))  
+
+
+            Swal.fire({
+                title: `Has eliminado ${nodo.id}`,
+                
+                icon: 'error',
+                confirmButtonText: 'OK'
+            })
 
         })
         
-        
     }
 }
-
-generadorCarrito(carritoDeCompras);
-
-
-
 
 
 
